@@ -10,6 +10,7 @@ import FormProfile from './components/FormProfile';
 import FormEducation from './components/FormEducation';
 import FormExperience from './components/FormExperience';
 import Apply from './pages/Apply';
+import ProtectedRoutes from './ProtectedRoutes';
 
 function App() {
   return (
@@ -32,24 +33,32 @@ function App() {
             <Route path='/register' element={
                 <Register />
             } />
+            
              <Route path='/home' element={
-                <Home />
+                <ProtectedRoutes>
+                  <Home />
+                </ProtectedRoutes>
             } />
              <Route path='/profile' element={
-                <Profile />
+                <ProtectedRoutes>
+                  <Profile />
+                </ProtectedRoutes>
             } />
               <Route path='/apply/:CompanyID' element={
-                <Apply />
+                <ProtectedRoutes>
+                  <Apply />
+                </ProtectedRoutes>
             } />
              <Route path='/education' element={
-                <FormEducation />
+                <ProtectedRoutes>
+                  <FormEducation />
+                </ProtectedRoutes>
             } />
              <Route path='/experience' element={
-                <FormExperience />
+                <ProtectedRoutes>
+                  <FormExperience />
+                </ProtectedRoutes>
             } />
-            {/* <Route path='/signup' element={ tokenUserId ? <Navigate to="/welcome" replace={true} /> : <Signup />} />
-            <Route path='/signin' element={ tokenUserId ? <Navigate to="/welcome" replace={true} /> : <SignIn />} />
-            <Route path='/welcome' element={<Welcome />} /> */}
           </Routes>
         </Suspense>
         </BrowserRouter>
