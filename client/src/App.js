@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect} from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import { Spinner } from '@chakra-ui/react';
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
@@ -15,53 +15,53 @@ import ProtectedRoutes from './ProtectedRoutes';
 function App() {
   return (
     <ChakraProvider>
-        <BrowserRouter>
+      <BrowserRouter>
         <Suspense fallback={
-          <div style={{display : "flex", justifyContent : "center", alignItems : "center", height: "100%", marginTop : "300px"}}>
-          <Spinner
-            thickness='4px'
-            speed='0.65s'
-            emptyColor='gray.200'
-            color='blue.500'
-            size='xl'
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", marginTop: "300px" }}>
+            <Spinner
+              thickness='4px'
+              speed='0.65s'
+              emptyColor='gray.200'
+              color='blue.500'
+              size='xl'
             />
           </div>}>
           <Routes>
             <Route path='/' element={
-               <Login />
-           } />
+              <Login />
+            } />
             <Route path='/register' element={
-                <Register />
+              <Register />
             } />
-            
-             <Route path='/home' element={
-                <ProtectedRoutes>
-                  <Home />
-                </ProtectedRoutes>
+
+            <Route path='/home' element={
+              <ProtectedRoutes>
+                <Home />
+              </ProtectedRoutes>
             } />
-             <Route path='/profile' element={
-                <ProtectedRoutes>
-                  <Profile />
-                </ProtectedRoutes>
+            <Route path='/profile' element={
+              <ProtectedRoutes>
+                <Profile />
+              </ProtectedRoutes>
             } />
-              <Route path='/apply/:CompanyID' element={
-                <ProtectedRoutes>
-                  <Apply />
-                </ProtectedRoutes>
+            <Route path='/apply/:CompanyID' element={
+              <ProtectedRoutes>
+                <Apply />
+              </ProtectedRoutes>
             } />
-             <Route path='/education' element={
-                <ProtectedRoutes>
-                  <FormEducation />
-                </ProtectedRoutes>
+            <Route path='/education' element={
+              <ProtectedRoutes>
+                <FormEducation />
+              </ProtectedRoutes>
             } />
-             <Route path='/experience' element={
-                <ProtectedRoutes>
-                  <FormExperience />
-                </ProtectedRoutes>
+            <Route path='/experience' element={
+              <ProtectedRoutes>
+                <FormExperience />
+              </ProtectedRoutes>
             } />
           </Routes>
         </Suspense>
-        </BrowserRouter>
+      </BrowserRouter>
     </ChakraProvider>
   );
 }

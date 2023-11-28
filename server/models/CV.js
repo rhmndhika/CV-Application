@@ -1,73 +1,73 @@
 const mongoose = require('mongoose')
 
 const CVSchema = new mongoose.Schema({
-    FirstName : {
+    FirstName: {
         type: String
     },
-    LastName : {
+    LastName: {
         type: String
     },
-    Age : {
+    Age: {
         type: String
     },
-    Address : {
+    Address: {
         type: String
     },
-    Nationality : {
+    Nationality: {
         type: String
     },
-    DateOfBirth : {
+    DateOfBirth: {
         type: String
     },
-    Email : {
+    Email: {
         type: String
     },
-    PhoneNumber : {
+    PhoneNumber: {
         type: Number
     },
-    Salary : {
+    Salary: {
         type: Number
     },
-    University : {
+    University: {
         type: String
     },
-    GraduationDate : {
+    GraduationDate: {
         type: Date
     },
-    Qualification : {
+    Qualification: {
         type: String
     },
-    Major : {
+    Major: {
         type: String
     },
-    Position : {
+    Position: {
         type: String
     },
-    CompanyName : {
+    CompanyName: {
         type: String
     },
-    MonthEntry : {
+    MonthEntry: {
         type: Date
     },
-    MonthLeave : {
+    MonthLeave: {
         type: Date
     },
-    FieldOfWork : {
+    FieldOfWork: {
         type: String
     },
-    Industry : {
+    Industry: {
         type: String
     },
-    JobDescription : {
+    JobDescription: {
         type: String
     },
-    Company : [
+    Company: [
         {
-            type: mongoose.Schema.Types.ObjectId,    
+            type: mongoose.Schema.Types.ObjectId,
             ref: 'companys'
         }
     ],
-    Creator : {
+    Creator: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'users'
     },

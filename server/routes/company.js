@@ -6,7 +6,7 @@ const createCompany = async (req, res) => {
 
     const newCompany = new Company(req.body);
 
-    try {        
+    try {
         const savedCompany = await newCompany.save();
         res.status(200).json(savedCompany);
     } catch (error) {
@@ -17,9 +17,9 @@ const createCompany = async (req, res) => {
 const getAllCompany = async (req, res) => {
     try {
         const companys = await Company.find({})
-        
+
         res.status(200).json(companys);
-    } catch(error) {
+    } catch (error) {
         res.status(500).json(error);
     }
 }

@@ -1,15 +1,15 @@
 const mongoose = require('mongoose')
 
 const CompanySchema = new mongoose.Schema({
-    Name : {
+    Name: {
         type: String,
         require: true,
         unique: true
     },
-    Image : {
+    Image: {
         type: String
     },
-    Description : {
+    Description: {
         type: String,
     },
 }, { timestamps: true })
